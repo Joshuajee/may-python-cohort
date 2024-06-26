@@ -8,8 +8,15 @@ class Fighter:
         
 
 class Boast:
+    strength = 100
+    def __init__(self):
+        print("UNU")
     def boast(self):
         print("You can't see me")
+        
+    def add(x):
+        x.strength += 50
+        print("Hellow")
     
     
     
@@ -70,3 +77,10 @@ fighter4.punch(fighter1)
 fighter4.fireball(fighter1)
 
 healths()
+
+
+bh = Boast()
+
+print(bh.strength)
+bh.add()
+print(bh.strength)

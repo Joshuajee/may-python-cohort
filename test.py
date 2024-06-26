@@ -1,6 +1,9 @@
 class Dog:
     name = None
     age = None
+    weight = 20
+    
+    print(type(weight))
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -33,3 +36,5 @@ print(b.age)
 print(type(a))
 
 b.bite("Jon")
+
+print(type(b))
