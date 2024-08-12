@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MY FIRST TEMPLATE </title>
+    </head>
+
+    <body>
+        <h1> Hello, World </h1>
+        <h2> Welcome {{name | default:"Anonymous"}} <h2>
+        {% if showText %}
+            <p> There was a boy </p>
+        {% elif name %}
+            <p> The Name </p>
+        {% else %}
+            <p> No boy </p>
+        {% endif %} 
+
+        <ol>
+            {% for product in products %}
+                <li> {{product}} </li>
+            {% endfor %}
+        </ol>
+
+        <ol>
+
+        {% for student in students %}
+            <li>ID {{student.id}}, Name: {{student.name}} </li>
+        {% endfor%}
+
+        </ol>
+ 
+    </body>
+
+</htm>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            {% block title %} 
+            
+            {% endblock  %} 
+        </title>
+    </head>
+
+    <body>
+
+        <nav style="height: 80px; background-color: red;">
+            <a href="/shop"> Home </a>
+            <a href="/shop/about"> About </a>
+        </nav>
+
+        {% block content %}
+
+            <p> Dummy Content </p>
+
+        {% endblock %}
+
+        {% block nothing %}
+
+            <p> Dummy nothing </p>
+
+        {% endblock %}
+
+        <footer style="height: 280px; background-color: blue;">
+
+        </footer>
+        
+    </body>
+
+</htm>

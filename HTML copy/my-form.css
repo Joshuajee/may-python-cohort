@@ -1,0 +1,13 @@
+label {
+    color: red;
+}
+
+.pass {
+    color: blue;
+    background-color: green;
+}
+
+#email {
+    font-size: 40px;
+    display: block;
+}

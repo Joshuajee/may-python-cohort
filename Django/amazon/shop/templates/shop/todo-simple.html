@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            {% block title %} 
+            
+            {% endblock  %} 
+        </title>
+    </head>
+
+    <body>
+
+        <nav style="height: 80px; background-color: red;">
+            <a href="/shop"> Home </a>
+            <a href="/shop/about"> About </a>
+        </nav>
+
+        {% for todo in todos %}
+            <li> {{todo.activity}}, {{todo.point}} </li>
+        {% endfor %}
+
+    </body>
+
+</htm>
