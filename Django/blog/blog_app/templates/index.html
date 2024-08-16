@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+
+{% load static%}
+
+{% block content %}
+
+
+{% for post in posts %}
+    <div class="post">
+        <h2> {{post.title}} </h2>
+        <p> {{post.user.first_name}} {{post.user.last_name}} | {{post.date| timesince }} ago | views: {{post.views}}</p>
+        <p> {{post.content}} </p>
+        <div class="readmore"> 
+            <a href="post/{{post.id}}"> <button> Read more </button> </a>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

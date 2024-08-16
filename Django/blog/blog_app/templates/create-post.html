@@ -1,0 +1,28 @@
+{% extends "./base.html" %}
+
+{% load static%}
+
+{% block content %}
+
+<div class="form-container">
+
+    <form method="post">
+        {% csrf_token %} 
+
+        {% if success %}
+            <p class="success"> {{success}} </p>
+        {% endif %}
+
+        <label for="title"> Title: </label>
+        <input id="title" type="text" name="title" />
+
+        <label for="content"> Content: </label>
+        <textarea id="content" name="content"></textarea>
+
+        <button> Create Post </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
