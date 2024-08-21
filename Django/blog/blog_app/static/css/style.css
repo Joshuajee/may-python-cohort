@@ -64,6 +64,8 @@ For Create Post
 .form-container {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .form-container > form {
@@ -75,18 +77,26 @@ For Create Post
     padding: 12px;
 }
 
-.form-container > form > * {
+.form-container > form  * {
     display: block;
     width: 100%;
     margin-top: 8px;
 }
 
-.form-container > form > input {
+.form-container .form-heading {
+    font-style: italic;
+    text-align: center;
+    font-size: 48px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.form-container > form  input {
     height: 44px;
     color: black;
 }
 
-.form-container > form > textarea {
+.form-container > form textarea {
     height: 240px;
     resize: none;
     color: black;
@@ -107,4 +117,16 @@ For Create Post
     border-radius: 8px;
     line-height: 3.5;
     color: green;
+}
+
+
+
+.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    text-align: center;
+    height: 60px;
+    border-radius: 8px;
+    line-height: 3.5;
+    color: red;
 }
