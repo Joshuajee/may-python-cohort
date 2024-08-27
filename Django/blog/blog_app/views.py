@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import F, Q
+from django.views import View
 from .models import Post, User
 from .forms import SignUpForm, LoginForm
+
 # Create your views here.
 
 def index(request):
@@ -16,6 +19,10 @@ def post(request, id):
     post.views += 1
     post.save()
     return render(request, "post.html", { "post": post })
+
+@login_required(login_url="/signin")
+def my_profile(request):
+    return render(request, "profile.html")
 
 @login_required(login_url="/signin")
 def my_posts(request):
@@ -78,3 +85,58 @@ def sign_in(request):
 def signout(request):
     logout(request)
     return HttpResponseRedirect("/")
+
+
+@login_required(login_url="/signin")
+def uplaods(request):
+    
+    user = User.objects.get(id=request.user.id)
+    
+    user.profile_image = request.FILES['image']
+    
+    user.save()
+    
+    return HttpResponseRedirect("/profile")
+
+
+
+def test_set_session(request):
+    request.session['name'] = "John Doe"
+    
+    return HttpResponse("Nothing")
+
+def test_get_session(request):
+    
+    return HttpResponse(request.session['name'])
+
+
+def query_test(request):
+    name = request.GET['name']
+    age = request.GET['age']
+    print(name, age)
+    return HttpResponse(name + " " + age)
+
+
+class Login(View):
+    
+    def get(self, request):
+        print("jjj")
+        form = LoginForm()
+        return render(request, "login.html", {"form": form })
+    
+    def post(self, request):
+        print("post")
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username   = form.cleaned_data['username']
+            password   = form.cleaned_data['password']
+            try: 
+                user = authenticate(username = username, password=password)
+                if user == None:
+                    return render(request, "login.html", {"form": form, "error": "Invalid Details"})
+                login(request, user)
+                return HttpResponseRedirect("/")
+            except:
+                return render(request, "login.html", {"form": form})
+                
+    

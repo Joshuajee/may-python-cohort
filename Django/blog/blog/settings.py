@@ -120,7 +120,6 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / STATIC_URL,
-    BASE_DIR/ 'uploads'
 ]
 
 # Default primary key field type
@@ -129,3 +128,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "blog_app.user"
+
+
+
+MEDIA_ROOT = BASE_DIR / "uploads"
+
+MEDIA_URL = ""

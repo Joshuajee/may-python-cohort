@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class User(AbstractUser):
-    profile_image = models.FileField(upload_to="uploads")
+    profile_image = models.FileField(upload_to="profiles")
     
 class Post(models.Model):
     user  = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="user")
