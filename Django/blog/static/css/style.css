@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: rgb(82, 79, 79);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 1px solid white;
+    background-color: black;
+    padding: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 80px;
+    padding: 20px;
+}
+
+
+
+nav > p {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.container {
+    padding: 40px;
+}
+
+.post {
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.post > * {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.readmore {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**  
+For Create Post
+*/
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-container > form {
+    background-color: black;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.form-container > form  * {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.form-container .form-heading {
+    font-style: italic;
+    text-align: center;
+    font-size: 48px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.form-container > form  input {
+    height: 44px;
+    color: black;
+}
+
+.form-container > form textarea {
+    height: 240px;
+    resize: none;
+    color: black;
+}
+
+.form-container > form > button {
+    background-color: gray;
+    height: 44px;
+    cursor: pointer;
+}
+
+
+.success {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid green;
+    text-align: center;
+    height: 60px;
+    border-radius: 8px;
+    line-height: 3.5;
+    color: green;
+}
+
+
+
+.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    text-align: center;
+    height: 60px;
+    border-radius: 8px;
+    line-height: 3.5;
+    color: red;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+}
