@@ -10,8 +10,12 @@ from .forms import SignUpForm, LoginForm
 # Create your views here.
 
 def index(request):
-    posts = Post.objects.all()
-    return render(request, "index.html", { "posts": posts })
+    q = request.GET.get("q", None)
+    if q != None:
+        posts = Post.objects.filter(title__icontains=q)
+    else:
+        posts = Post.objects.all()
+    return render(request, "index.html", { "posts": posts, "q": q })
 
 
 def post(request, id):

@@ -142,3 +142,9 @@ For Create Post
     height: 240px;
     border-radius: 100%;
 }
+
+.search-input {
+    height: 38px;
+    color: black;
+    width: 320px;
+}
