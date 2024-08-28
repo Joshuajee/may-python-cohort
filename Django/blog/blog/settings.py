@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ['DEBUG'])
+DEBUG = True if os.environ['DEV'] == "True" else False
 
 ALLOWED_HOSTS = ["may-python-cohort.onrender.com", "127.0.0.1"]
 
@@ -88,6 +88,7 @@ DATABASES = {
 }
 
 # Production Database
+print(DEBUG)
 if not DEBUG:
     DATABASES = {
         "default": {
